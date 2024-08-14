@@ -3,7 +3,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import p1 from '../assets/p1.png'
 import p2 from '../assets/p2.png'
-import p4 from '../assets/p4.png'
+import p3 from '../assets/P3.png'
+import p4 from '../assets/P4.png'
 
 import main from '../assets/main.jpg'
 
@@ -20,7 +21,7 @@ const Home = () => {
                 <section className='max-w-7xl mx-auto flex flex-col items-center pt-14 mb-20'>
                     <h1 style={{ fontWeight: "900" }} className='text-5xl font-playfair'>Celebrate Pakistan's Diversity with PakPride</h1>
 
-                    <p style={{ fontSize: "20px", fontWeight: "300" }} className='px-72 text-center my-3'>Discover the beauty of Pakistan's diverse cultures, regions, languages,
+                    <p style={{ fontSize: "20px", fontWeight: "300" }} className='px-72 text-center my-4'>Discover the beauty of Pakistan's diverse cultures, regions, languages,
                         and traditions with PakPride. Embrace the richness of diversity.</p>
 
                     <img src={main} className='w-7/12 h-auto object-cover rounded-lg mt-8' alt="" />
@@ -69,7 +70,7 @@ const Home = () => {
                             identity.</p>
                     </div>
                     <div data-aos="fade-left">
-                        <img src={p1} alt="" />
+                        <img src={p3} alt="" />
                     </div>
                 </section>
 
