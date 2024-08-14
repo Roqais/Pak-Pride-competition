@@ -3,7 +3,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import p1 from '../assets/p1.png'
 import p2 from '../assets/p2.png'
-import p3 from '../assets/p3.png'
 import p4 from '../assets/p4.png'
 
 import main from '../assets/main.jpg'
@@ -70,7 +69,7 @@ const Home = () => {
                             identity.</p>
                     </div>
                     <div data-aos="fade-left">
-                        <img src={p3} alt="" />
+                        <img src={p1} alt="" />
                     </div>
                 </section>
 
