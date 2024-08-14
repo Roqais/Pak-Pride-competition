@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import p1 from '../assets/p1.png'
@@ -6,6 +8,8 @@ import p2 from '../assets/p2.png'
 import p3 from '../assets/P3.png'
 import p4 from '../assets/P4.png'
 
+import dual from "../assets/dual.png"
+import quaid from "../assets/quaid.png"
 import main from '../assets/main.jpg'
 
 const Home = () => {
@@ -53,11 +57,11 @@ const Home = () => {
                             contributes to a unified mosaic, celebrating the beauty of
                             diversity through art, music, and shared experiences.</p>
 
-                            <button type="button" className="text-white bg-blue-700 hover:bg-blue-800
+                        <button type="button" className="text-white bg-blue-700 hover:bg-blue-800
                              focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2
                               mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none
                                dark:focus:ring-blue-800 mt-3">Explore</button>
-                            </div>
+                    </div>
                 </section>
 
                 <section className='grid grid-cols-2 justify-center items-center gap-20 mx-32 pt-4 pb-20'>
@@ -89,7 +93,52 @@ const Home = () => {
                     </div>
                 </section>
 
-                <div className='border border-slate-400 py-20'></div>
+                <div className='border border-slate-400'></div>
+
+
+                <section style={{ backgroundColor: "#894838" }} className='py-20  flex flex-col text-white items-center'>
+                    <h2 style={{ fontWeight: "700", fontSize: "30px" }} className='font-playfair'>"With faith, discipline, and selfless devotion to duty, <br />
+                        there is nothing worthwhile that you cannot achieve.."</h2>
+
+                    <div className='flex mt-8 gap-6'>
+                        <img src={quaid} alt="" />
+
+                        <div>
+                            <h3 style={{ fontWeight: "600", fontSize: "18px" }} >Quaid-e-Azam Muhammad Ali Jinnah</h3>
+                            <p style={{ fontWeight: "600", fontSize: "12px" }}>(Pakistan's founder)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div className='pt-52 pb-32 relative'>
+                    <div style={{ backgroundColor: "#111827" }} className="absolute -left-10 top-32 z-0 rounded-xl h-80 w-1/2 "></div>
+
+                    <div style={{ backgroundColor: "#1F2937" }} className='relative z-10 max-w-3xl mx-auto flex flex-col gap-8 items-center justify-center h-72 rounded-xl'>
+                        <img src={dual} alt="" />
+                        <p className='px-32 text-center font-light text-white'>
+                            <i>“DualForce combines the creative power of design with the technical strength of development. Together, we craft seamless and impactful landing pages that stand out in any competition.” - Farah Siddique</i>
+                        </p>
+                    </div>
+                </div>
+
+                <footer className="h-52 bg-[#1F2937] flex flex-col gap-4 justify-center items-center">
+                    <div className="flex gap-10">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                            <FaFacebook className="text-white text-3xl" />
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                            <FaInstagram className="text-white text-3xl"
+                            />
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                            <FaYoutube className="text-white text-3xl" />
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin className="text-white text-3xl" />
+                        </a>
+                    </div>
+                    <p className="text-white text-center font-light ">© All rights reserved.</p>
+                </footer>
 
 
             </div>

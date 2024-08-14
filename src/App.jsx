@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Regions from './pages/Regions'
+import Register from './components/Register'
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/regions/:name' element={<Regions />} />
+            <Route path='/register' element={<Register />} />
           </Routes>
 
         </div>
