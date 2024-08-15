@@ -220,7 +220,7 @@ const regionData = {
             }
         ]
     }
-    
+
 
 };
 
@@ -235,35 +235,32 @@ const Regions = () => {
 
     return (
         <>
-            <div style={{ backgroundImage: `url(${regionInfo.main})`, zIndex: '-1', position: 'relative' }} className='min-h-screen bg-top bg-cover'>
-                <div className="container mx-auto text-left text-white">
-                    <h1 className="text-8xl font-bold tracking-wider text-white pl-32 pt-32 drop-shadow-[4px_4px_4px_rgba(0,0,0,1)] uppercase">{name}</h1>
-
+            <div
+                style={{ backgroundImage: `url(${regionInfo.main})`, zIndex: '-1', position: 'relative' }}
+                className='md:min-h-screen h-[49rem] bg-top bg-cover bg-no-repeat'>
+                <div className="container mx-auto md:text-left text-white px-4 sm:px-6 md:px-8">
+                    <h1 className="text-2xl  md:text-8xl font-bold tracking-wider text-white  sm:pl-8 md:pl-16 lg:pl-32 pt-16 sm:pt-20 md:pt-24 lg:pt-32 drop-shadow-[4px_4px_4px_rgba(0,0,0,1)] uppercase">{name}</h1>
                 </div>
             </div>
 
-            <div className='grid grid-cols-2 justify-center items center gap-20 my-32   px-20'>
-                <div style={{ backgroundColor: "#E2E2B6" }} className='col-span-1 border-2 px-10 py-14 tracking-wider rounded-xl shadow-xl'>
-                    <h2 style={{ color: "#03346E" }} className='text-3xl font-bold text-center'>{regionInfo.title}</h2>
-                    <p style={{ color: "#021526" }} className='mt-5'>{regionInfo.description}</p>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-20 my-16 sm:my-24'>
+                <div style={{ backgroundColor: "#E2E2B6" }} className='border-2 px-6 py-8 sm:px-10 sm:py-12 tracking-wider rounded-xl shadow-xl'>
+                    <h2 style={{ color: "#03346E" }} className='uppercase text-xl sm:text-2xl md:text-3xl font-bold text-center'>{regionInfo.title}</h2>
+                    <p style={{ color: "#021526" }} className='mt-4 sm:mt-5'>{regionInfo.description}</p>
                 </div>
 
-                <div style={{ backgroundColor: "#E2E2B6" }} className=' col-span-1 border-2 px-10 py-14  tracking-wider rounded-xl shadow-xl'>
-                    <h1 style={{ color: "#03346E" }} className='text-center text-3xl font-bold tracking-wider'>Languages</h1>
-
-                    <p style={{ color: "#021526" }} className='mt-5'>
-                        {regionInfo.languages}
-                    </p>
+                <div style={{ backgroundColor: "#E2E2B6" }} className='border-2 px-6 py-8 sm:px-10 sm:py-12 tracking-wider rounded-xl shadow-xl'>
+                    <h1 style={{ color: "#03346E" }} className='text-xl sm:text-2xl md:text-3xl font-bold text-center tracking-wider'>Languages</h1>
+                    <p style={{ color: "#021526" }} className='mt-4 sm:mt-5'>{regionInfo.languages}</p>
                 </div>
             </div>
 
-
-            <div className='text-center mb-20'>
-                <h2 style={{ color: "#800000" }} className='text-5xl font-bold mb-20'>Culture</h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-10'>
+            <div className='text-center mb-10 sm:mb-16 lg:mb-20'>
+                <h2 style={{ color: "#800000" }} className='text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-14 lg:mb-20'>Culture</h2>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mx-4 sm:mx-6 lg:mx-10'>
                     {regionInfo.culture.map((item, index) => (
-                        <div key={index} className='bg-white p-6 rounded-lg shadow-md border-2 border-green-600 mx-3 py-10 transform transition-transform duration-300 hover:scale-105 hover:cursor-default'>
-                            <h3 className='text-2xl font-semibold mb-4'>{item.title}</h3>
+                        <div key={index} className='bg-white px-4 py-8   rounded-lg shadow-md border-2 border-[#4f4a4a] transform transition-transform duration-300 hover:scale-105 hover:cursor-default'>
+                            <h3 className='text-xl sm:text-2xl text-[#990011] font-semibold mb-3 sm:mb-4'>{item.title}</h3>
                             <p className='text-gray-700'>{item.description}</p>
                         </div>
                     ))}

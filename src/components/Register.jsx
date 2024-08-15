@@ -3,17 +3,18 @@ import logo from '../assets/logo.png'
 
 const Register = () => {
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <section className="bg-gray-50 min-h-screen md:min-h-0 dark:bg-gray-900">
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto  md:py-10 ">
         <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
           <img
-            className="w-40 h-auto mr-2 drop-shadow-[0px_0px_12px_rgba(0,0,0,1)]"
+            className=" h-auto mr-1 "
             src={logo}
             alt="logo"
           />
+          <h2 className='text-[#990011]'>PakPride</h2>
         </a>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <div className="p-6 space-y-4 md:space-y-6 sm:p-8 md:shadow-lg md:shadow-slate-300">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Create an account
             </h1>
