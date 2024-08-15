@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const regions = ['Punjab', 'Sindh', 'KhyberPakhtunkhwa', 'Balochistan', 'GilgitBaltistan', 'AzadKashmir'];
+    const regions = ['Punjab', 'Sindh', 'Khyber-Pakhtunkhwa', 'Balochistan', 'Gilgit Baltistan', 'Azad Kashmir'];
 
 
 
@@ -63,11 +63,11 @@ const Navbar = () => {
                                 </div>
                                 <ul
                                     className={`${isDropdownOpen ? 'block' : 'hidden'
-                                        }  absolute right-0 text-sm p-5 w-full md:w-[44rem] rounded-xl text-black bg-white border border-gray-200 shadow-lg grid grid-cols-1 md:grid-cols-3 gap-2`}
+                                        }  absolute right-0 text-sm p-2 w-full md:w-[33rem] rounded-xl text-black bg-white border border-gray-200 shadow-lg grid grid-cols-1 md:grid-cols-3 gap-2`}
                                 >
                                     {regions.map((region) => (
                                         <Link key={region} to={`/regions/${region}`} onClick={handleLinkClick}>
-                                            <li className="text-center text-lg text-[#990011] px-1 py-6 hover:bg-gray-100">
+                                            <li className="text-center text-[1rem] text-[#990011] px-1 py-6 hover:bg-gray-100">
                                                 {region.replace('-', ' ')}
                                             </li>
                                         </Link>

@@ -1,6 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
+import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
+
+
 // Punjab
 import p1Main from "../assets/punjab/p1Main.jpg";
 import pun1 from "../assets/punjab/pMain.jpg";
@@ -25,7 +28,8 @@ import kMain from '../assets/kMain.jpg'
 // Sample data for each region
 const regionData = {
     Punjab: {
-        title: "Discover Punjab: Culture, History, and Festivals",
+        title: "Discover Punjab: ",
+        subTitle: "Culture, History, and Festivals",
         description: 'Punjab, the most populous province of Pakistan, is known for its rich culture, history, and vibrant festivals. It is the land of five rivers, offering fertile plains and a blend of urban and rural life. Lahore, the capital, is a cultural hub with historic landmarks like the Badshahi Mosque, Lahore Fort, and Shalimar Gardens. The region is also famous for its cuisine, traditional music, and dance.',
         languages: 'In Punjab, Pakistan, Punjabi is the most widely spoken and culturally significant language. It is the mother tongue of the majority of the population in the region. Punjabi is an Indo-Aryan language and is spoken by about 80% of the population in Punjab. The language is rich in history and culture, with a vibrant tradition of poetry, music, and folklore. Punjabi is predominantly written in the Shahmukhi script, which is a variant of the Urdu script used in Pakistan. ',
         main: p1Main,
@@ -58,7 +62,8 @@ const regionData = {
 
     },
     Sindh: {
-        title: "Discover Sindh: A Land of Rivers and Rich Heritage",
+        title: "Discover Sindh: ",
+        subTitle: "A Land of Rivers and Rich Heritage",
         description: "Sindh, a province in Pakistan, is renowned for its historical significance, diverse culture, and stunning landscapes. Bordering the Arabian Sea, it's known for its coastal cities and the mighty Indus River. With a blend of ancient civilizations and modern influences, Sindh offers a unique experience for visitors.",
         languages: "Sindhi, the soul of Sindh, is the primary language spoken by its people. Rich in history and culture, it's a language that weaves through the fabric of the province. While Urdu, Pakistan's national language, enjoys widespread use, especially in urban areas, Sindhi remains the linguistic heart of Sindh. English, as a global language, has its place in modern society, but it's Sindhi that truly defines the region's identity.",
         main: sMain, // Replace with your Sindh main image path
@@ -89,8 +94,9 @@ const regionData = {
             }
         ]
     },
-    KhyberPakhtunkhwa: {
-        title: "Explore Khyber Pakhtunkhwa: Culture, History, and Traditions",
+    "Khyber-Pakhtunkhwa": {
+        title: "Explore Khyber Pakhtunkhwa: ",
+        subTitle: "Culture, History, and Traditions",
         description: 'Khyber Pakhtunkhwa, a province in northwestern Pakistan, is known for its stunning natural landscapes, rich cultural heritage, and historical significance. The region is characterized by its mountainous terrain, including the majestic Hindu Kush range, and its diverse cultural traditions. Peshawar, the provincial capital, is a historical city with landmarks like the Peshawar Museum and Qissa Khwani Bazaar.',
         languages: 'In Khyber Pakhtunkhwa, Pashto is the most widely spoken language and holds significant cultural importance. It is the mother tongue of the majority in the region and is known for its rich oral traditions, including poetry and storytelling. Pashto is an Indo-Iranian language with its own script. Urdu and English are also widely used, particularly in education and government.',
         main: kpMain,
@@ -123,7 +129,8 @@ const regionData = {
     },
 
     Balochistan: {
-        title: "Discover Balochistan: Culture, History, and Heritage",
+        title: "Discover Balochistan:",
+        subTitle: "Culture, History, and Traditions",
         description: 'Balochistan, the largest province of Pakistan by area, is known for its diverse landscapes, rich cultural heritage, and historical significance. The region features arid deserts, rugged mountains, and a long coastline along the Arabian Sea. Quetta, the provincial capital, is a major center for trade and culture. Balochistan is known for its unique traditions, traditional music, and distinct cuisine.',
         languages: 'In Balochistan, Balochi is the most widely spoken language, reflecting the rich cultural identity of the region. It is an Indo-Iranian language with several dialects. Pashto and Brahui are also spoken by various communities in the province. Urdu and English are used in official contexts and education.',
         main: bMain,
@@ -155,8 +162,9 @@ const regionData = {
         ]
     },
 
-    GilgitBaltistan: {
-        title: "Explore Gilgit-Baltistan: Natural Beauty and Cultural Riches",
+    "Gilgit Baltistan": {
+        title: "Explore Gilgit-Baltistan: ",
+        subTitle: "Natural Beauty and Cultural Riches",
         description: 'Gilgit-Baltistan, located in the northernmost region of Pakistan, is renowned for its breathtaking landscapes, including towering mountains, deep valleys, and pristine lakes. The region is a gateway to some of the world’s highest peaks, including K2. Gilgit-Baltistan is known for its unique cultural heritage, traditional festivals, and the rich history of its diverse ethnic communities. The capital, Gilgit, serves as a central hub for tourism and cultural activities.',
         languages: 'In Gilgit-Baltistan, multiple languages are spoken, including Shina, Balti, and Khowar, reflecting the region’s ethnic diversity. Urdu and English are also used for official communication and education. Shina is the most widely spoken language in the Gilgit region, while Balti is prominent in the Baltistan region.',
         main: gMain,
@@ -188,8 +196,9 @@ const regionData = {
         ]
     },
 
-    AzadKashmir: {
-        title: "Discover Azad Kashmir: Natural Beauty and Cultural Heritage",
+    "Azad Kashmir": {
+        title: "Discover Azad Kashmir: ",
+        subTitle: "Natural Beauty and Cultural Heritage",
         description: 'Azad Kashmir, located in the northern part of Pakistan, is known for its stunning natural landscapes, including lush green valleys, serene lakes, and majestic mountains. The region is renowned for its breathtaking scenery and pleasant climate, making it a popular destination for tourists. Muzaffarabad, the capital, is a key cultural and administrative center. Azad Kashmir is rich in traditional culture, vibrant festivals, and unique cuisine.',
         languages: 'In Azad Kashmir, Urdu is the predominant language and serves as the primary mode of communication across the region. Kashmiri, also widely spoken, holds significant cultural importance and is used in various traditional and cultural contexts. English is commonly used in educational institutions and for official purposes, reflecting its role in administration and higher education.',
         main: kMain,
@@ -239,18 +248,18 @@ const Regions = () => {
                 style={{ backgroundImage: `url(${regionInfo.main})`, zIndex: '-1', position: 'relative' }}
                 className='md:min-h-screen h-[49rem] bg-top bg-cover bg-no-repeat'>
                 <div className="container mx-auto md:text-left text-white px-4 sm:px-6 md:px-8">
-                    <h1 className="text-2xl  md:text-8xl font-bold tracking-wider text-white  sm:pl-8 md:pl-16 lg:pl-32 pt-16 sm:pt-20 md:pt-24 lg:pt-32 drop-shadow-[4px_4px_4px_rgba(0,0,0,1)] uppercase">{name}</h1>
+                    <h1 className="text-2xl  md:text-7xl md:text-center font-bold tracking-wider text-white  sm:pl-8  pt-16 sm:pt-20 md:pt-24 lg:pt-32 drop-shadow-[4px_4px_4px_rgba(0,0,0,1)] uppercase">{name}</h1>
                 </div>
             </div>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-20 my-16 sm:my-24'>
                 <div style={{ backgroundColor: "#E2E2B6" }} className='border-2 px-6 py-8 sm:px-10 sm:py-12 tracking-wider rounded-xl shadow-xl'>
-                    <h2 style={{ color: "#03346E" }} className='uppercase text-xl sm:text-2xl md:text-3xl font-bold text-center'>{regionInfo.title}</h2>
+                    <h2 style={{ color: "#990011" }} className='uppercase text-3xl  md:text-3xl font-bold text-center'>{regionInfo.title} <br /> <span className='md:text-xl text-xl'>{regionInfo.subTitle}</span></h2>
                     <p style={{ color: "#021526" }} className='mt-4 sm:mt-5'>{regionInfo.description}</p>
                 </div>
 
                 <div style={{ backgroundColor: "#E2E2B6" }} className='border-2 px-6 py-8 sm:px-10 sm:py-12 tracking-wider rounded-xl shadow-xl'>
-                    <h1 style={{ color: "#03346E" }} className='text-xl sm:text-2xl md:text-3xl font-bold text-center tracking-wider'>Languages</h1>
+                    <h1 style={{ color: "#990011" }} className='text-3xl  md:text-3xl font-bold text-center tracking-wider'>Languages</h1>
                     <p style={{ color: "#021526" }} className='mt-4 sm:mt-5'>{regionInfo.languages}</p>
                 </div>
             </div>
@@ -266,6 +275,24 @@ const Regions = () => {
                     ))}
                 </div>
             </div>
+
+            <footer className="bg-[#1F2937] flex flex-col items-center py-8 text-white">
+                <div className="flex gap-6 mb-4">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <FaFacebook className="text-2xl" />
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <FaInstagram className="text-2xl" />
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                        <FaYoutube className="text-2xl" />
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="text-2xl" />
+                    </a>
+                </div>
+                <p className="text-center text-sm">© All rights reserved.</p>
+            </footer>
 
         </>
     );
