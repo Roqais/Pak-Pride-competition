@@ -114,15 +114,15 @@ const Home = () => {
 
             {/* DualForce Section */}
             <section className='relative py-20'>
-                <div className='bg-[#111827] absolute -left-10 top-32 rounded-xl h-80 w-1/2'></div>
+                <div className='bg-[#111827] absolute -left-10 md:top-32 top-10 rounded-xl md:h-80 h-[39rem] w-1/2'></div>
 
-                <div className='bg-[#1F2937] relative max-w-3xl mx-auto flex flex-col gap-8 items-center justify-center h-[27rem] md:rounded-xl px-4'>
+                <div className='bg-[#1F2937] relative max-w-3xl mx-auto flex flex-col gap-8 items-center justify-center md:h-[27rem] h-[33rem] md:rounded-xl px-4'>
                     <img src={dual} alt="DualForce" className='h-auto' />
-                    <p className='text-center text-white px-4'>
+                    <p className='text-center text-white md:px-4'>
                         <i>“DualForce combines the creative power of design with the technical strength of development. Together, we craft seamless and impactful landing pages that stand out in any competition.”</i>
                     </p>
 
-                    <div className='flex flex-col md:flex-row items-center justify-between text-white md:gap-44 md:mt-1'>
+                    <div className='flex flex-row items-center justify-between text-white md:gap-44 gap-14 md:mt-1'>
                         <div className='flex flex-col items-center'>
                             <div className='w-24 h-24 bg-cover bg-center rounded-full' style={{ backgroundImage: `url(${roqais})` }}></div>
                             <h2 className='mt-4 text-xl'>Roqais Mahmood</h2>
