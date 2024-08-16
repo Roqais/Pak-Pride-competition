@@ -32,14 +32,14 @@ const Navbar = () => {
                     <Link to="/" onClick={handleLinkClick}>
                         <div className="flex gap-2 md:ml-0 ml-2">
                             <img src={logo} alt="PakPride Logo" />
-                            <h1 className="text-[#990011] font-bold text-2xl">PakPride</h1>
+                            <h1 className="text-[#2C8C30] font-bold text-2xl">PakPride</h1>
                         </div>
                     </Link>
 
                     <div className="md:hidden">
                         <button
                             onClick={toggleMenu}
-                            className="text-[#990011] focus:outline-none mr-2 "
+                            className="text-[#2C8C30] focus:outline-none mr-2 "
                         >
                             {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                         </button>
@@ -52,7 +52,7 @@ const Navbar = () => {
                         <ul className="list-none md:flex gap-14 items-center">
                             <li className="group relative cursor-pointer transform transition-transform duration-200 hover:scale-105">
                                 <div
-                                    className="flex text-[#990011] items-center justify-between"
+                                    className="flex text-[#2C8C30] items-center justify-between mx-1"
                                     onClick={toggleDropdown}
                                 >
                                     Regions
@@ -67,7 +67,7 @@ const Navbar = () => {
                                 >
                                     {regions.map((region) => (
                                         <Link key={region} to={`/regions/${region}`} onClick={handleLinkClick}>
-                                            <li className="text-center text-[1rem] text-[#990011] px-1 py-6 hover:bg-gray-100">
+                                            <li className="text-center text-[1rem] text-[#2C8C30] px-1 py-6 hover:bg-gray-100">
                                                 {region.replace('-', ' ')}
                                             </li>
                                         </Link>
@@ -76,9 +76,19 @@ const Navbar = () => {
                             </li>
                             <li className="md:mt-0 mt-4">
                                 <Link onClick={handleLinkClick}
+                                    to="/unity-diversity"
+                                    className="py-2 mx-1  text-[#2C8C30] rounded-lg font-semibold transition duration-300  hover:scale-110 ease-in-out 
+                                     block "
+                                //  transform transition-transform duration-200 hover:scale-105
+                                >
+                                    Diversity
+                                </Link>
+                            </li>
+                            <li className="md:mt-0 mt-4">
+                                <Link onClick={handleLinkClick}
                                     to="/register"
-                                    className="py-2 px-4 border-2 border-[#990011] text-[#990011] rounded-lg transition duration-300 ease-in-out 
-                                    hover:bg-[#990011] hover:text-white hover:border-transparent block text-center"
+                                    className="py-2 px-4 border-2 border-[#2C8C30] text-[#2C8C30] rounded-lg transition duration-300 ease-in-out 
+                                    hover:bg-[#2C8C30] hover:text-white hover:border-transparent block text-center"
                                 >
                                     Register
                                 </Link>

@@ -246,7 +246,7 @@ const Regions = () => {
         <>
             <div
                 style={{ backgroundImage: `url(${regionInfo.main})`, zIndex: '-1', position: 'relative' }}
-                className='md:min-h-screen h-[49rem] bg-top bg-cover bg-no-repeat'>
+                className='md:min-h-screen h-[49rem] bg-top bg-cover bg-no-repeat '>
                 <div className="container mx-auto md:text-left text-white px-4 sm:px-6 md:px-8">
                     <h1 className="text-2xl  md:text-7xl md:text-center font-bold tracking-wider text-white  sm:pl-8  pt-16 sm:pt-20 md:pt-24 lg:pt-32 drop-shadow-[4px_4px_4px_rgba(0,0,0,1)] uppercase">{name}</h1>
                 </div>
@@ -254,22 +254,22 @@ const Regions = () => {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-20 my-16 sm:my-24'>
                 <div style={{ backgroundColor: "#E2E2B6" }} className='border-2 px-6 py-8 sm:px-10 sm:py-12 tracking-wider rounded-xl shadow-xl'>
-                    <h2 style={{ color: "#990011" }} className='uppercase text-3xl  md:text-3xl font-bold text-center'>{regionInfo.title} <br /> <span className='md:text-xl text-xl'>{regionInfo.subTitle}</span></h2>
+                    <h2 style={{ color: "#2C8C30" }} className='uppercase text-3xl  md:text-3xl font-bold text-center'>{regionInfo.title} <br /> <span className='md:text-lg text-xl'>{regionInfo.subTitle}</span></h2>
                     <p style={{ color: "#021526" }} className='mt-4 sm:mt-5'>{regionInfo.description}</p>
                 </div>
 
                 <div style={{ backgroundColor: "#E2E2B6" }} className='border-2 px-6 py-8 sm:px-10 sm:py-12 tracking-wider rounded-xl shadow-xl'>
-                    <h1 style={{ color: "#990011" }} className='text-3xl  md:text-3xl font-bold text-center tracking-wider'>Languages</h1>
+                    <h1 style={{ color: "#2C8C30" }} className='text-3xl  md:text-3xl font-bold text-center tracking-wider'>Languages</h1>
                     <p style={{ color: "#021526" }} className='mt-4 sm:mt-5'>{regionInfo.languages}</p>
                 </div>
             </div>
 
             <div className='text-center mb-10 sm:mb-16 lg:mb-20'>
-                <h2 style={{ color: "#800000" }} className='text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-14 lg:mb-20'>Culture</h2>
+                <h2 style={{ color: "#2C8C30" }} className='text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-14 lg:mb-20'>Culture</h2>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mx-4 sm:mx-6 lg:mx-10'>
                     {regionInfo.culture.map((item, index) => (
                         <div key={index} className='bg-white px-4 py-8   rounded-lg shadow-md border-2 border-[#4f4a4a] transform transition-transform duration-300 hover:scale-105 hover:cursor-default'>
-                            <h3 className='text-xl sm:text-2xl text-[#990011] font-semibold mb-3 sm:mb-4'>{item.title}</h3>
+                            <h3 className='text-xl sm:text-2xl text-[#2C8C30] font-semibold mb-3 sm:mb-4'>{item.title}</h3>
                             <p className='text-gray-700'>{item.description}</p>
                         </div>
                     ))}

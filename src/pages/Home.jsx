@@ -1,116 +1,74 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import p1 from '../assets/p1.png';
-import p2 from '../assets/p2.png';
-import p3 from '../assets/P3.png';
-import p4 from '../assets/P4.png';
-import dual from "../assets/dual.png";
-import quaid from "../assets/quaid.png";
-import main from '../assets/main.jpg';
-import { Link } from 'react-router-dom';
 
-import roqais from "../assets/profiles/p1.jpg"
-import farah from "../assets/profiles/farah.jpg"
+import dual from "../assets/dual.png";
+import roqais from "../assets/profiles/p1.jpg";
+import farah from "../assets/profiles/farah.jpg";
+import ind1 from '../assets/bg-ind.jpg';
+import pak from '../assets/pak-flag.jpg';
 
 const Home = () => {
-    useEffect(() => {
-        AOS.init({ duration: 1000 });
-    }, []);
+    // State to control the visibility of the fullscreen image
+    const [isImageVisible, setIsImageVisible] = useState(true);
+
+    // Function to hide the fullscreen image
+    const handleButtonClick = () => {
+        setIsImageVisible(false);
+    };
 
     return (
         <div className="bg-gray-100">
-            {/* Hero Section */}
-            <section className='bg-main flex flex-col items-center pt-14 mb-20 px-4'>
-                <h1 className='text-4xl sm:text-5xl font-playfair font-extrabold text-center'>
-                    Celebrate Pakistan's Diversity with PakPride
-                </h1>
-                <p className='text-lg sm:text-xl text-center my-4 px-4 md:px-96 font-light'>
-                    Discover the beauty of Pakistan's diverse cultures, regions, languages,
-                    and traditions with PakPride. Embrace the richness of diversity.
-                </p>
-                <img src={main} className='w-full sm:w-7/12 h-auto object-cover rounded-lg mt-8' alt="Main" />
-            </section>
 
-            <div className='border border-slate-400'></div>
+            {/* Fullscreen Overlay */}
+            {isImageVisible && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm">
+                    <div className="relative md:w-[50%] md:h-[55%] w-[85%] h-[50%] max-w-full max-h-full border p-2 rounded-lg bg-gray-300 border-gray-300">
+                        <img src={ind1} alt="Independence Day" className="w-full rounded-lg h-full object-cover" />
 
-            {/* Explore Section */}
-            <section className='text-center md:py-20 py-14 px-4'>
-                <h2 className='text-2xl sm:text-3xl font-playfair font-extrabold'>
-                    Explore Pakistan's Diversity
-                </h2>
-                <p className='text-base sm:text-lg font-light mt-4 mx-auto max-w-4xl'>
-                    Pakistan's diversity is a rich tapestry of cultures, languages, and traditions. From the
-                    vibrant festivals of Punjab to the serene valleys of Gilgit-Baltistan, each region offers a
-                    unique blend of history, art, and cuisine, reflecting the nation's deep cultural heritage.
-                </p>
-            </section>
+                        {/* Close Button */}
+                        <button
+                            onClick={handleButtonClick}
+                            className="absolute top-4 right-4 text-red-700 text-3xl h-12 w-12 rounded-full flex items-center justify-center bg-white   hover:bg-[#155a15] hover:text-white transition"
+                        >
+                            &times;
+                        </button>
 
-            {/* Embrace Cultural Richness Section */}
-            <section className='grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-8 mx-4 md:mx-32 pt-4 md:pb-20 pb-10'>
-                <div data-aos="fade-right">
-                    <img src={p2} alt="Cultural Richness" className='w-full h-auto' />
-                </div>
-                <div data-aos="fade-left" className='md:flex md:flex-col item-center justify-center md:text-left text-center'>
-                    <h3 className='text-2xl font-playfair font-extrabold md:mb-2 mb-4'>Embrace Cultural Richness</h3>
-                    <p className='text-base font-light'>
-                        Embrace the cultural richness of Pakistan, where centuries-old
-                        traditions meet modern vibrancy. Each region's distinct heritage
-                        contributes to a unified mosaic, celebrating the beauty of
-                        diversity through art, music, and shared experiences.
-                    </p>
-                </div>
-            </section>
-
-            {/* Learn About Different Regions Section */}
-            <section className='grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-8 mx-4 md:mx-32 pt-4 md:pb-20 pb-10'>
-                <div data-aos="fade-right" className='md:order-1 order-2 md:flex md:flex-col item-center justify-center md:text-left text-center'>
-                    <h3 className='text-2xl font-playfair font-extrabold md:mb-2 mb-4'>Learn About Different Regions</h3>
-                    <p className='text-base font-light'>
-                        Discover the distinct charm of Pakistan's diverse regions, each offering unique
-                        landscapes, traditions, and lifestyles. From the bustling cities to the tranquil
-                        countryside, learning about these areas reveals the nation's multifaceted
-                        identity.
-                    </p>
-                </div>
-                <div data-aos="fade-left" className='md:order-2 order-1'>
-                    <img src={p3} alt="Different Regions" className=' w-full h-auto' />
-                </div>
-            </section>
-
-            {/* Connect Through Languages Section */}
-            <section className='grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-8 mx-4 md:mx-32 pt-4 md:pb-20 pb-14'>
-                <div data-aos="fade-right">
-                    <img src={p4} alt="Languages" className='w-full h-auto' />
-                </div>
-                <div data-aos="fade-left" className='md:flex md:flex-col item-center justify-center md:text-left text-center'>
-                    <h3 className='text-2xl font-playfair font-extrabold md:mb-2 mb-4'>Connect Through Languages</h3>
-                    <p className='text-base font-light'>
-                        Connect through the myriad of languages spoken across
-                        Pakistan, each carrying the essence of its community. From Urdu
-                        to Punjabi, Sindhi to Pashto, these languages unite people while
-                        preserving the rich cultural diversity of the nation.
-                    </p>
-                </div>
-            </section>
-
-            <div className='border border-slate-400'></div>
-
-            {/* Inspirational Quote Section */}
-            <section className='bg-[#894838] md:py-14 py-8 flex flex-col text-white items-center md:gap-4'>
-                <h2 className='md:text-xl text-lg md:px-0 px-12 font-playfair font-semibold text-center mb-4'>
-                    "With faith, discipline, and selfless devotion to duty, <br />
-                    there is nothing worthwhile that you cannot achieve."
-                </h2>
-                <div className='flex flex-col sm:flex-row items-center md:gap-4 md:mt-0 mt-2'>
-                    <img src={quaid} alt="Quaid-e-Azam" className='md:w-10 w-10 h-auto' />
-                    <div className='text-center sm:text-left'>
-                        <h3 className=' text-sm font-medium'>Quaid-e-Azam Muhammad Ali Jinnah</h3>
-                        <p className=' text-sm font-light'>(Pakistan's founder)</p>
                     </div>
+                    <button
+                        onClick={handleButtonClick}
+                        className="md:text-lg text-xs absolute bottom-40 md:bottom-24 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#1f6821] to-[#155a15] text-white py-3 px-6 rounded-full shadow-lg hover:shadow-2xl hover:opacity-90 transition ease-in-out duration-300"
+                    >
+                        Pakistan Zindabad
+                    </button>
+
+
+                </div>
+            )}
+
+
+
+            <section className='md:py-28'>
+                <div className='flex flex-col md:flex-row  justify-between md:max-w-7xl md:mx-auto gap-8 items-center'>
+                    <div className='md:order-1 order-2 md:mx-10 mb-12 md:mt-0 mt-2'>
+                        <h1 className='md:text-4xl leading-18 text-2xl font-bold tracking-wider md:text-left text-center'>
+                            <span className='text-[#1f6821]'>Celebrating</span> <br />
+                            <span className='md:text-6xl text-3xl text-[#2C8C30]'> 77 Years of Freedom </span>
+                        </h1>
+                        <p className='mt-6 font-light leading-7 md:pr-10 md:px-0 px-4'>
+                            As we mark Pakistan's 77th Independence Day, we honor the spirit of resilience and <br />
+                            unity that has shaped our nation's journey. Let's come together to reflect on our <br />
+                            past, celebrate our present, and envision a brighter future for generations to come. <br />
+                            As Pakistan celebrates its 77th Independence Day, we pause to honor the remarkable journey that began on August 14, 1947. This day marks the realization of a dream born <br />
+                            from the tireless efforts and sacrifices of countless individuals who envisioned a free <br />
+                            and sovereign nation. From the vision of our founding fathers to the struggles of ordinary citizens, Pakistan's independence was hard-won, and its significance continues to resonate across generations.
+                        </p>
+                    </div>
+
+                    <img src={pak} className='md:order-2 order-1 w-[25rem] h-[25rem] md:w-[28rem] md:h-[28rem] md:rounded-full bg-cover bg-center bg-no-repeat' alt="" />
                 </div>
             </section>
+
+            <div className='border border-slate-400'></div>
 
             {/* DualForce Section */}
             <section className='relative py-20'>
@@ -124,32 +82,30 @@ const Home = () => {
 
                     <div className='flex flex-row items-center justify-between text-white md:gap-44 gap-14 md:mt-1'>
                         <div className='flex flex-col items-center'>
-                            <div className='w-24 h-24 bg-cover bg-center rounded-full' style={{ backgroundImage: `url(${roqais})` }}></div>
+                            <div className='w-24 h-24 bg-cover bg-center rounded-full hover:cursor-pointer' style={{ backgroundImage: `url(${roqais})` }}></div>
                             <h2 className='mt-4 text-xl'>Roqais Mahmood</h2>
                             <h3>(Developer)</h3>
                             <div className='flex gap-4 mt-3'>
-                                <a href='https://www.linkedin.com/in/roqais-mahmood-225a33251/' target='_blank'>
-                                    <FaLinkedin className=" w-7 h-7" />
+                                <a href='https://www.linkedin.com/in/roqais-mahmood-225a33251/' target='_blank' rel="noopener noreferrer">
+                                    <FaLinkedin className="w-7 h-7" />
                                 </a>
-                                <FaEnvelope className=' w-7 h-7' />
+                                <FaEnvelope className='w-7 h-7' />
                             </div>
                         </div>
                         <div className='flex flex-col items-center'>
-                            <div className='w-24 h-24 bg-cover bg-top rounded-full' style={{ backgroundImage: `url(${farah})` }}></div>
+                            <div className='w-24 h-24 bg-cover bg-top rounded-full hover:cursor-pointer' style={{ backgroundImage: `url(${farah})` }}></div>
                             <h2 className='mt-4 text-xl'>Farah Siddique</h2>
                             <h3>(Designer)</h3>
                             <div className='flex gap-4 mt-3'>
-                                <a href='https://www.linkedin.com/in/farah-siddique-ba12892a7/' target="_blank">
-                                    <FaLinkedin className=" w-7 h-7" />
+                                <a href='https://www.linkedin.com/in/farah-siddique-ba12892a7/' target="_blank" rel="noopener noreferrer">
+                                    <FaLinkedin className="w-7 h-7" />
                                 </a>
-                                <FaEnvelope className=' w-7 h-7' />
+                                <FaEnvelope className='w-7 h-7' />
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
-
 
             {/* Footer */}
             <footer className="bg-[#1F2937] flex flex-col items-center py-8 text-white">
